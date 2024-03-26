@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://crq5s3pkrpwfq"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_fdhpy"]
+[ext_resource type="Texture2D" uid="uid://bhx2wfkiwmhkh" path="res://Sunny Land Collection/player.png" id="2_gv5ly"]
+[ext_resource type="Texture2D" uid="uid://ikcjgfvsky54" path="res://player/kdogv1.png" id="3_c28a4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_savj2"]
+radius = 25.0
+height = 78.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvyh7"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycjl7"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(33, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypgvb"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ayvb"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaky3"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s52bc"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxl4j"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(0, 160, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odbid"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(33, 160, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwe8"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssguu"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_284ne"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp37f"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp8px"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvuoc"]
+atlas = ExtResource("2_gv5ly")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8uf24"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"aaaaa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvyh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycjl7")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypgvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ayvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaky3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s52bc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxl4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odbid")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssguu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_284ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp37f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp8px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvuoc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_fdhpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_savj2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8uf24")
+animation = &"aaaaa"
+
+[node name="Kdogv1" type="Sprite2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.512931, 0.572115)
+texture = ExtResource("3_c28a4")
